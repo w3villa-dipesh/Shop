@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
       if @order.save
         OrderMailer.with(order: @order).new_order_email.deliver
 
-        format.html { redirect_to order_url(@order), notice: "Order was successfully created." }
+        format.html { redirect_to order_url(@order), notice: "Thanks For your Order We will Contact You Soon" }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new, status: :unprocessable_entity }
